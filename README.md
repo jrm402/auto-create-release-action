@@ -97,4 +97,4 @@ This Action was inspired by the GitHub Action: [GitHub Action // Auto-Release on
 
 ## License
 
-This project is licensced under the [MIT License](https://github.com/Alive-For-Him/Auto-Release-Action/blob/main/LICENSE).
+This project is licensed under the [MIT License](https://github.com/Alive-For-Him/Auto-Release-Action/blob/main/LICENSE).
