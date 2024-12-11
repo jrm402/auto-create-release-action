@@ -1,4 +1,4 @@
-# Auto-Create Release Action
+# Auto-Create Release from Verion Action
 
 This Action will automatically create a release when a commit is pushed. It is expected that a `CHANGELOG.md` will exist (see [inputs configuration](#inputs) and [example changelog](#example-changelogmd)).
 

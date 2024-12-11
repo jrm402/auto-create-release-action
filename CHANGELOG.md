@@ -2,6 +2,12 @@
 
 All changes to this project are documented in this file.
 
+## v1.0.1
+
+### Changes
+
+- Update action name to unique name: `Auto-Create Release from Version`
+
 ## v1.0.0
 
 ### Changes

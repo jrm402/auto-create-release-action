@@ -1,5 +1,5 @@
-name: "Auto-Create Release"
-description: "Auto-create releases on push"
+name: "Auto-Create Release from Version"
+description: "Auto-create releases from version found in package.json"
 inputs:
   title:
     description: "Title for the release"
