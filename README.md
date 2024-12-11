@@ -8,6 +8,9 @@ This Action will automatically create a release when a commit is pushed. It is e
 
 To get started, create a workflow `.yml` file in your `.github/workflows` directory. There is an [example workflow](#example-workflow) below.
 
+> [!NOTE]
+> This action requires read/write permission for the `GITHUB_TOKEN`. Please review [these instructions](https://docs.github.com/en/actions/security-for-github-actions/security-guides/automatic-token-authentication#permissions-for-the-github_token) to set the permissions appropriately for your repository.
+
 ### Inputs
 
 The following inputs are available. All inputs are optional.
