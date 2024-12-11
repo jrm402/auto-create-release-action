@@ -3,7 +3,7 @@ run-name: Test the action against a real commit on GitHub
 
 on:
   push:
-    branches: ['main']
+    branches: ["main"]
 
 jobs:
   run-action:

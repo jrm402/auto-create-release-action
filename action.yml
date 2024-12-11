@@ -1,4 +1,4 @@
-name: "Auto Release"
+name: "Auto-Create Release"
 description: "Auto-create releases on push"
 inputs:
   title:
