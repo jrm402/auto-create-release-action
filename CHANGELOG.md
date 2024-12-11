@@ -2,6 +2,12 @@
 
 All changes to this project are documented in this file.
 
+## v1.0.2
+
+### Changes
+
+- Update README notes.
+
 ## v1.0.1
 
 ### Changes

@@ -50,7 +50,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - uses: Alive-For-Him/Auto-Release-Action@v1.0.0
+      - uses: jrm402/auto-create-release-action@latest
         with:
           title: "v$version" # Optional
           tag: "v$version" # Optional
