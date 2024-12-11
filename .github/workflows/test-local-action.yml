@@ -1,0 +1,31 @@
+name: Test Local Action
+run-name: Test the action against a real commit on GitHub
+
+on:
+  push:
+    branches: ['main']
+
+jobs:
+  run-action:
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout codebase
+      - name: Checkout codebase
+        id: checkout
+        uses: actions/checkout@v4
+
+      # Test the action
+      - name: Test local action
+        id: test-action
+        uses: ./
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # Print results
+      - name: Print results
+        id: output
+        run: |
+          echo "Success ${{ steps.test-action.outputs.success }}"
+          echo "Release ID ${{ steps.test-action.outputs.id }}"
+          echo "Version ${{ steps.test-action.outputs.version }}"
+          echo "Release URL ${{ steps.test-action.outputs.releaseUrl }}"
