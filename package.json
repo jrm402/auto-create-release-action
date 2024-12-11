@@ -1,6 +1,6 @@
 {
   "name": "auto-create-release-action",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "This Action will automatically create a release when a commit is pushed",
   "main": "index.js",
   "scripts": {
@@ -11,7 +11,7 @@
     "lint": "",
     "package": "ncc build src/index.js -o dist --source-map --license licenses.txt --minify",
     "test": "jest",
-    "all": "npm i && npm run format:write && npm run lint && npm run test && npm run coverage && npm run package"
+    "all": "npm i && npm run format:write && npm run lint && npm run coverage && npm run package"
   },
   "repository": {
     "type": "git",

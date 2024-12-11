@@ -2,6 +2,12 @@
 
 All changes to this project are documented in this file.
 
+## v1.0.5
+
+### Changes
+
+- Add additional error logging for situations where the `CHANGELOG.md` file's lines could not be parsed.
+
 ## v1.0.4
 
 ### Changes

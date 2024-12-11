@@ -163,6 +163,11 @@ const createRelease = async (token, { title, tag, draft, body }) => {
  */
 const getChangelogVersion = (cl, clHeaderRegExp, version) => {
   const lines = cl.split(/\r?\n/);
+  if (lines == null || lines.length === 0) {
+    core.info("No lines were found in the CHANGELOG file");
+    return "";
+  }
+
   let changes = "";
   let headerMatch = false;
 
