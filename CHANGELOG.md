@@ -2,6 +2,12 @@
 
 All changes to this project are documented in this file.
 
+## v1.0.4
+
+### Changes
+
+- Add additional error logging for situations where the `package.json` or `CHANGELOG.md` file could not be found or are empty.
+
 ## v1.0.3
 
 ### Changes

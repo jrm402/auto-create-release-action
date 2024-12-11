@@ -32,9 +32,23 @@ async function run() {
     const pkgInfo = await getCommitInfo(token, "package.json", commit.id);
     const clInfo = await getCommitInfo(token, changelog, commit.id);
 
+    // check package.json file
+    if (pkgInfo == null) {
+      return setFailed("package.json file could not be found.");
+    } else if (pkgInfo.length === 0) {
+      return setFailed("package.json file is blank.");
+    }
+
+    // check changelog file
+    if (clInfo == null) {
+      return setFailed(`${changelog} file could not be found.`);
+    } else if (clInfo.length === 0) {
+      return setFailed(`${changelog} file is blank.`);
+    }
+
     // load version
     const _version = /"version":\s*"(.+)"/.exec(pkgInfo);
-    if (_version === null || !_version[1]) {
+    if (_version == null || !_version[1]) {
       return setFailed("Version was not found in package.json.");
     }
     const version = _version[1];
@@ -159,7 +173,7 @@ const getChangelogVersion = (cl, clHeaderRegExp, version) => {
     const exec = headerRegExp.exec(line);
 
     // this is the beginning of the version match
-    if (exec !== null && exec.length >= 2) {
+    if (exec != null && exec.length >= 2) {
       if (headerMatch) break; // we are done; 2nd header match
       if (exec[1] === version) headerMatch = true; // begin matching
       continue;
