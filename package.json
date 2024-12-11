@@ -1,6 +1,6 @@
 {
   "name": "auto-create-release-action",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "This Action will automatically create a release when a commit is pushed",
   "main": "index.js",
   "scripts": {

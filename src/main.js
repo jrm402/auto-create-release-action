@@ -25,7 +25,7 @@ async function run() {
 
     // get commit information
     const commits = context.payload.commits;
-    if (commits.length === 0) {
+    if (commits == null || commits.length === 0) {
       return setFailed("No commits found.");
     }
     const commit = commits[commits.length - 1];
@@ -58,7 +58,8 @@ async function run() {
       releaseUrl: release.data.html_url,
     });
   } catch (e) {
-    setFailed(e.message ?? "An error has occurred.");
+    console.error(e);
+    setFailed(e.message ?? "An error has occurred.", true);
   }
 }
 
