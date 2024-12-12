@@ -2,6 +2,12 @@
 
 All changes to this project are documented in this file.
 
+## v1.0.6
+
+### Changes
+
+- Add ability to use triggering actions that are not a `push`. The context of the `package.json` and the `CHANGELOG.md` file are pulled from the default branch in that case.
+
 ## v1.0.5
 
 ### Changes

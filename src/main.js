@@ -24,20 +24,24 @@ async function run() {
       : rawChangelogHeaderRegexp;
 
     // get commit information
+    console.log("Context:");
+    console.log(context);
+    let commitId = null;
     const commits = context.payload.commits;
     if (commits == null || commits.length === 0) {
-      console.log("Context:");
-      console.log(context);
-      return setFailed("No commits found.", true);
+      core.info("No commit context was found. Using default branch.");
+      // return setFailed('No commits found.', true);
+    } else {
+      const commit = commits[commits.length - 1];
+      commitId = commit.id;
     }
-    const commit = commits[commits.length - 1];
-    console.log("Commits:");
-    console.log(commits);
-    console.log("Commit:");
-    console.log(commit.id);
-    console.log("");
-    const pkgInfo = await getCommitInfo(token, "package.json", commit.id);
-    const clInfo = await getCommitInfo(token, changelog, commit.id);
+    // console.log('Commits:');
+    // console.log(commits);
+    // console.log('Commit:');
+    // console.log(commit.id);
+    // console.log('');
+    const pkgInfo = await getCommitInfo(token, "package.json", commitId);
+    const clInfo = await getCommitInfo(token, changelog, commitId);
 
     // check package.json file
     if (pkgInfo == null) {
@@ -95,7 +99,7 @@ async function getCommitInfo(token, path, ref) {
     response = await gh.rest.repos.getContent({
       ...context.repo,
       path,
-      ref,
+      ...(ref != null && { ref }),
     });
   } catch (e) {
     return "";
