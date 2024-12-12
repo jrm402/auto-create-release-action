@@ -35,6 +35,7 @@ async function run() {
     console.log(commits);
     console.log("Commit:");
     console.log(commit.id);
+    console.log("");
     const pkgInfo = await getCommitInfo(token, "package.json", commit.id);
     const clInfo = await getCommitInfo(token, changelog, commit.id);
 
