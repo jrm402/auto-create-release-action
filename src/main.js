@@ -26,30 +26,36 @@ async function run() {
     // get commit information
     const commits = context.payload.commits;
     if (commits == null || commits.length === 0) {
-      return setFailed("No commits found.");
+      console.log("Context:");
+      console.log(context);
+      return setFailed("No commits found.", true);
     }
     const commit = commits[commits.length - 1];
+    console.log("Commits:");
+    console.log(commits);
+    console.log("Commit:");
+    console.log(commit.id);
     const pkgInfo = await getCommitInfo(token, "package.json", commit.id);
     const clInfo = await getCommitInfo(token, changelog, commit.id);
 
     // check package.json file
     if (pkgInfo == null) {
-      return setFailed("package.json file could not be found.");
+      return setFailed("package.json file could not be found.", true);
     } else if (pkgInfo.length === 0) {
-      return setFailed("package.json file is blank.");
+      return setFailed("package.json file is blank.", true);
     }
 
     // check changelog file
     if (clInfo == null) {
-      return setFailed(`${changelog} file could not be found.`);
+      return setFailed(`${changelog} file could not be found.`, true);
     } else if (clInfo.length === 0) {
-      return setFailed(`${changelog} file is blank.`);
+      return setFailed(`${changelog} file is blank.`, true);
     }
 
     // load version
     const _version = /"version":\s*"(.+)"/.exec(pkgInfo);
     if (_version == null || !_version[1]) {
-      return setFailed("Version was not found in package.json.");
+      return setFailed("Version was not found in package.json.", true);
     }
     const version = _version[1];
 
