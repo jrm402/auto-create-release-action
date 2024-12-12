@@ -24,22 +24,15 @@ async function run() {
       : rawChangelogHeaderRegexp;
 
     // get commit information
-    console.log("Context:");
-    console.log(context);
     let commitId = null;
     const commits = context.payload.commits;
     if (commits == null || commits.length === 0) {
       core.info("No commit context was found. Using default branch.");
-      // return setFailed('No commits found.', true);
     } else {
       const commit = commits[commits.length - 1];
       commitId = commit.id;
     }
-    // console.log('Commits:');
-    // console.log(commits);
-    // console.log('Commit:');
-    // console.log(commit.id);
-    // console.log('');
+
     const pkgInfo = await getCommitInfo(token, "package.json", commitId);
     const clInfo = await getCommitInfo(token, changelog, commitId);
 
