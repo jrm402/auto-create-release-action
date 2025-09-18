@@ -2,6 +2,10 @@
 
 All changes to this project are documented in this file.
 
+## v1.0.7
+
+- Update documentation to use `v1` tag instead of `latest` tag.
+
 ## v1.0.6
 
 ### Changes
