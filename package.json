@@ -1,6 +1,6 @@
 {
 	"name": "auto-create-release-action",
-	"version": "1.0.7",
+	"version": "1.0.8",
 	"description": "This Action will automatically create a release when a commit is pushed",
 	"main": "index.js",
 	"scripts": {
@@ -52,6 +52,7 @@
 		"@actions/github": "^6.0.0"
 	},
 	"devDependencies": {
+		"@github/local-action": "^3.2.0",
 		"@vercel/ncc": "^0.38.3",
 		"jest": "^29.7.0",
 		"make-coverage-badge": "^1.2.0",
