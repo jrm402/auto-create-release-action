@@ -4,9 +4,7 @@ All changes to this project are documented in this file.
 
 ## v1.0.7
 
-### Changes
-
-- Update the default value for `changelog-header-regexp` to include parsing versions that have pre-release notation (e.g., `1.0.0-rc` or `0.2.3-debug.2`).
+- Update documentation to use `v1` tag instead of `latest` tag.
 
 ## v1.0.6
 

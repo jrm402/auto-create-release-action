@@ -50,7 +50,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - uses: jrm402/auto-create-release-action@latest
+      - uses: jrm402/auto-create-release-action@v1
         with:
           title: "v$version" # Optional
           tag: "v$version" # Optional
