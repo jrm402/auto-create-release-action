@@ -20,7 +20,7 @@ async function run() {
       (rawDraft == null ? "false" : rawDraft).toLowerCase() === "true";
     const changelog = rawChangelog ? "CHANGELOG.md" : rawChangelog;
     const changelogHeaderRegexp = rawChangelogHeaderRegexp
-      ? "^## v(\\d+\\.\\d+\\.\\d+)"
+      ? "^## v(\\d+\\.\\d+\\.\\d+(\\-.+)*)"
       : rawChangelogHeaderRegexp;
 
     // get commit information

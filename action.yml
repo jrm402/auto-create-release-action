@@ -20,7 +20,7 @@ inputs:
   changelog-header-regexp:
     description: "Regular expression string a CHANGELOG line must match to be considered a version header. This MUST match a version group in the string. This group will be checked against the version found in package.json."
     required: false
-    default: '^## v(\d+\.\d+\.\d+)'
+    default: '^## v(\d+\.\d+\.\d+(\-.+)*)'
 outputs:
   success:
     description: "Whether or not a release was created"

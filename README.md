@@ -19,7 +19,7 @@ The following inputs are available. All inputs are optional.
 - `tag`: Name of the release tag (The slug `$version` is replaced by the version detected in `package.json`). Default `v$version`
 - `draft`: Is this a draft release or not. Default `false`
 - `changelog`: The path to the CHANGELOG.md file (including the file name). Default `CHANGELOG.md`
-- `changelog-header-regexp`: The regular expression string a CHANGELOG line must match to be considered a version header. This MUST match a version group in the string. This group will be checked against the version found in package.json. Default `^## v(\d+\.\d+\.\d+)`
+- `changelog-header-regexp`: The regular expression string a CHANGELOG line must match to be considered a version header. This MUST match a version group in the string. This group will be checked against the version found in package.json. Default `^## v(\d+\.\d+\.\d+(\-.+)*)`
 
 ### Outputs
 
