@@ -120,7 +120,8 @@ async function getCommitInfo(token, path, ref) {
     // throw new Error( `Something went wrong when trying to get the file at ${path}`);
   }
 
-  return Buffer.from(data.content, "base64").toString("binary");
+  // return Buffer.from(data.content, "base64").toString("binary");
+  return Buffer.from(data.content, "base64").toString("utf8");
 }
 
 /**

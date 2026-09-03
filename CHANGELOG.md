@@ -2,6 +2,12 @@
 
 All changes to this project are documented in this file.
 
+## v1.0.11
+
+### Changes
+
+- Fix: decode the changelog as UTF-8 rather than latin1.
+
 ## v1.0.10
 
 ### Changes
